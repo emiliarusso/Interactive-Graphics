@@ -127,6 +127,7 @@ class MeshDrawer
 		// activate the texture unit 0 and bind the texture to it
 		gl.activeTexture(gl.TEXTURE0);
 		gl.uniform1i(this.textureLocation, 0);
+		this.showTexture(true);  // Force the shader to use the texture
 	}
 	
 	// This method is called when the user changes the state of the
