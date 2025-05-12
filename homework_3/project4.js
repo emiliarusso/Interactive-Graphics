@@ -93,7 +93,7 @@ class MeshDrawer
 
 		// Bind texture
 		gl.activeTexture(gl.TEXTURE0);
-		gl.bindTexture(gl.TEXTURE_2D, this.mytexture); // << ADD THIS LINE
+		gl.bindTexture(gl.TEXTURE_2D, this.mytexture); 
 
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
 		gl.vertexAttribPointer(this.positionLocation, 3, gl.FLOAT, false, 0, 0);
@@ -127,7 +127,7 @@ class MeshDrawer
 		// activate the texture unit 0 and bind the texture to it
 		gl.activeTexture(gl.TEXTURE0);
 		gl.uniform1i(this.textureLocation, 0);
-		this.showTexture(true);  // Force the shader to use the texture
+		this.showTexture(true);  // tell the shader to use the texture
 	}
 	
 	// This method is called when the user changes the state of the
