@@ -141,7 +141,7 @@ class MeshDrawer
 	}	
 }
 
-var VS = `
+const VS = `
 attribute vec3 vertPos;
 attribute vec2 vertTexCoord;
 uniform mat4 mvp;
@@ -158,7 +158,7 @@ void main() {
 }
 `;
 
-var FS = `
+const FS = `
 precision mediump float;
 uniform sampler2D sampler;
 varying vec2 fragTexCoord;
