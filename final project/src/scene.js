@@ -344,7 +344,7 @@ export class SceneManager {
         this._addWindowSegment(-5, 0.8, 2.0, -5, 2.2, -1.0);
 
       } else {
-        // Altre pareti normali (senza finestra)
+        // all other walls
         const [x1, y1, z1, x2, y2, z2] = coords;
 
         const positions = new Float32Array([
@@ -357,15 +357,16 @@ export class SceneManager {
           0, 0, 1, 1, 0, 1
         ]);
 
-        const p1 = [x1, y1, z1];
+        // define 3 points of the wall
+        const p1 = [x1, y1, z1]; 
         const p2 = [x2, y1, z2];
         const p3 = [x2, y2, z2];
 
-        // due lati del triangolo (p2 - p1) e (p3 - p1)
+        // two vectors along the wall surface
         const u = [p2[0] - p1[0], p2[1] - p1[1], p2[2] - p1[2]];
         const v = [p3[0] - p1[0], p3[1] - p1[1], p3[2] - p1[2]];
 
-        // prodotto vettoriale u x v
+        // the cross product gives the vector normal perpendicular to the wall
         const normal = [
           u[1] * v[2] - u[2] * v[1],
           u[2] * v[0] - u[0] * v[2],
@@ -375,6 +376,7 @@ export class SceneManager {
         const normLength = Math.hypot(...normal);
         const normalized = normal.map(n => n / normLength);
 
+        // assign normals to all vertices (same normal since wall is flat)
         const normals = new Float32Array([
           ...normalized, ...normalized, ...normalized,
           ...normalized, ...normalized, ...normalized
@@ -424,9 +426,9 @@ export class SceneManager {
         0, 0, 1, 1, 0, 1
     ]);
 
-    const dx = x2 - x1, dz = z2 - z1;
-    const edge1 = [x2 - x1, y2 - y1, z2 - z1];
-    const edge2 = [0, 1, 0]; // su (asse Y)
+    const dx = x2 - x1, dz = z2 - z1; // difference in X and Z coordinates between 2 points
+    const edge1 = [x2 - x1, y2 - y1, z2 - z1]; // from first to second point
+    const edge2 = [0, 1, 0]; // on Y (unit)
 
     const normal = [
       edge1[1] * edge2[2] - edge1[2] * edge2[1],
@@ -434,8 +436,8 @@ export class SceneManager {
       edge1[0] * edge2[1] - edge1[1] * edge2[0]
     ];
 
-    const length = Math.hypot(...normal);
-    const norm = normal.map(n => -n);
+    const length = Math.hypot(...normal); // magnitude of normal vec
+    const norm = normal.map(n => -n); // flip direction 
 
     const normals = new Float32Array([...norm, ...norm, ...norm, ...norm, ...norm, ...norm]);
 
@@ -482,8 +484,8 @@ export class SceneManager {
         0, 0, 1, 1, 0, 1
     ]);
 
-    const dx = x2 - x1, dz = z2 - z1;
-    const normal = [dz, 0, -dx];
+    const dx = x2 - x1, dz = z2 - z1; // difference in X and Z coordinates between 2 points
+    const normal = [dz, 0, -dx]; // normal vector perpendicular to the window segment
     const length = Math.hypot(...normal);
     const norm = normal.map(n => n / length);
 
@@ -612,7 +614,7 @@ export class SceneManager {
   _createDirectionalHelper() {
     const dir = vec3.normalize([], this.lightDirection);
     const origin = [0, 2.5, 0]; // starting point of the directional light
-    const end = vec3.scaleAndAdd([], origin, dir, -2.0); 
+    const end = vec3.scaleAndAdd([], origin, dir, -2.0);  // point 2 units away from the start
 
     const vertices = new Float32Array([...origin, ...end]);
     const buffer = this.gl.createBuffer();
@@ -652,14 +654,15 @@ export class SceneManager {
     return { min, max, matrix: obj.modelMatrix };
   }
 
-  
   pickObject(screenX, screenY, camera) {
+    // convert pixel coordinates into [-1,1]
     const ndcX = (2 * screenX) / this.gl.canvas.width - 1;
     const ndcY = 1 - (2 * screenY) / this.gl.canvas.height;
 
     for (let obj of this.objects) {
         if (!obj.selectable) continue;
 
+        // get obj world pos and extract
         const model = obj.modelMatrix;
         const pos = [model[12], model[13], model[14]];
 
@@ -667,8 +670,10 @@ export class SceneManager {
         mat4.multiply(viewProj, camera.projectionMatrix, camera.viewMatrix);
         const clip = vec4.fromValues(pos[0], pos[1], pos[2], 1);
         vec4.transformMat4(clip, clip, viewProj);
+
         const ndc = [clip[0] / clip[3], clip[1] / clip[3]];
 
+        // check if obj close to click
         const dx = Math.abs(ndcX - ndc[0]);
         const dy = Math.abs(ndcY - ndc[1]);
 
