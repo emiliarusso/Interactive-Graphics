@@ -1,0 +1,80 @@
+[
+  {
+    "name": "floor"
+  },
+  {
+    "name": "wall_0"
+  },
+  {
+    "name": "wall_1"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "window"
+  },
+  {
+    "name": "wall_3"
+  },
+  {
+    "name": "door"
+  },
+  {
+    "name": "directionalHelper"
+  },
+  {
+    "name": "pointLightHelper"
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/desk/Computer Desk.obj",
+    "texturePath": null,
+    "scale": 2,
+    "color": [
+      0.8235294117647058,
+      0.1568627450980392,
+      0.1568627450980392
+    ],
+    "position": [
+      0.5999999046325684,
+      1,
+      -1.9000003337860107
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/bed/Bed_01.obj",
+    "texturePath": "./objects/bed/Cube.005_Bake1_cyclesbake_COMBINED.png",
+    "scale": 3,
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "position": [
+      -0.10000000149011612,
+      1,
+      2.9999992847442627
+    ],
+    "rotation": [
+      3.141592653589793,
+      1.5707963191191885,
+      3.141592653589793
+    ]
+  }
+]

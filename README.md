@@ -1,2 +1,2 @@
 # Interactive-Graphics
-Homework submissions for the Interactive Graphics course during the 2024/2025 Academic Year
+This repository includes all completed homework assignments, as well as the final project titled RoomRender, an interactive WebGL-based room editor, for the Interactive Graphics course during the 2024/2025 Academic Year.

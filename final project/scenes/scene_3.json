@@ -1,0 +1,101 @@
+[
+  {
+    "name": "floor"
+  },
+  {
+    "name": "wall_0"
+  },
+  {
+    "name": "wall_1"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "window"
+  },
+  {
+    "name": "wall_3"
+  },
+  {
+    "name": "door"
+  },
+  {
+    "name": "directionalHelper"
+  },
+  {
+    "name": "pointLightHelper"
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/wardrobe/Wardrobe.obj",
+    "texturePath": null,
+    "scale": 3,
+    "color": [
+      0.5333333333333333,
+      0.1450980392156863,
+      0.1450980392156863
+    ],
+    "position": [
+      -0.9000000953674316,
+      1,
+      -4.099998474121094
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/bed/Bed_01.obj",
+    "texturePath": "./objects/bed/Cube.005_Bake1_cyclesbake_COMBINED.png",
+    "scale": 3,
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "position": [
+      2.605238336172988e-8,
+      1,
+      3.1999990940093994
+    ],
+    "rotation": [
+      3.141592653589793,
+      1.5707963191191885,
+      3.141592653589793
+    ]
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/decorations/decorations.obj",
+    "texturePath": "./objects/decorations/decorations.png",
+    "scale": 2,
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "position": [
+      -4.399998188018799,
+      1,
+      -3.2999989986419678
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ]
+  }
+]

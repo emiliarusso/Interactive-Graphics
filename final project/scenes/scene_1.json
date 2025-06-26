@@ -1,0 +1,101 @@
+[
+  {
+    "name": "floor"
+  },
+  {
+    "name": "wall_0"
+  },
+  {
+    "name": "wall_1"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "wall_segment"
+  },
+  {
+    "name": "window"
+  },
+  {
+    "name": "wall_3"
+  },
+  {
+    "name": "door"
+  },
+  {
+    "name": "directionalHelper"
+  },
+  {
+    "name": "pointLightHelper"
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/desk/Computer Desk.obj",
+    "texturePath": null,
+    "scale": 2,
+    "color": [
+      0.8352941176470589,
+      0.26666666666666666,
+      0.26666666666666666
+    ],
+    "position": [
+      -0.10000000149011612,
+      0.7999999523162842,
+      3.9999983310699463
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/office-chair/office_chair.obj",
+    "texturePath": "./textures/metal.jpeg",
+    "scale": 1.5,
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "position": [
+      -0.19999976456165314,
+      1,
+      3.1999990940093994
+    ],
+    "rotation": [
+      3.141592653589793,
+      -8.93202241059041e-8,
+      3.141592653589793
+    ]
+  },
+  {
+    "name": "object",
+    "modelPath": "./objects/sofa/S01 M02.obj",
+    "texturePath": "./objects/sofa/sofa.png.png",
+    "scale": 2.5,
+    "color": [
+      1,
+      1,
+      1
+    ],
+    "position": [
+      -3.0912837982177734,
+      1,
+      -2.299619436264038
+    ],
+    "rotation": [
+      3.141592653589793,
+      1.5707963191191885,
+      3.141592653589793
+    ]
+  }
+]
